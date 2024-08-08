@@ -7,7 +7,7 @@ const cartSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-        const item = { ...action.payload, cost: parseFloat(action.payload.cost) || 0 }; // Ensure cost is a number
+        const item = { ...action.payload, cost: parseFloat(action.payload.cost) || 0 }; 
         const existingItem = state.cartItems.find(cartItem => cartItem.name === item.name);
         if (existingItem) {
           existingItem.quantity += 1;
@@ -32,7 +32,7 @@ const cartSlice = createSlice({
       const itemName = action.payload;
       const item = state.cartItems.find(i => i.name === itemName);
       if (item) {
-        item.quantity = Math.max(item.quantity - 1, 1); // Ensure quantity doesn't go below 1
+        item.quantity = Math.max(item.quantity - 1, 1); 
       }
     }
   }
