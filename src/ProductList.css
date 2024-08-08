@@ -1,252 +1,154 @@
-/* Reset some default styles */
-body, h1, ul {
-    margin: 0;
-    padding: 0;
+/* General Container Styling */
+.product-list-container {
+  padding: 20px;
+  background-color: #f4f4f4; /* Light grey background for contrast */
+  min-height: 100vh; /* Ensure the container fills the height of the viewport */
+  display: flex;
+  flex-direction: column;
 }
 
-/* Set a background color */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-}
-
-/* Navbar */
+/* Navbar Styling */
 .navbar {
-    background-color: #4CAF50;
-    color: #fff!important;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #4caf50; /* Navbar background color */
+  color: #fff; /* Text color for the navbar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for navbar */
 }
 
-.navbar .ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1100px;
+/* Navbar Brand Styling */
+.navbar-brand {
+  display: flex;
+  align-items: center;
 }
 
-.navbar li {
-    margin-right: 30px;
+/* Logo in Navbar */
+.navbar-logo {
+  height: 40px;
+  margin-right: 15px;
 }
 
-.navbar .ul div a {
-    color: white;
-    font-size: 30px;
-    text-decoration: none;
-   
+/* Title in Navbar */
+.navbar-title {
+  color: #fff;
+  text-decoration: none;
 }
 
-/* Product Grid */
+.navbar-title h3 {
+  margin: 0;
+  font-size: 1.5rem; /* Adjust font size if needed */
+}
+
+.navbar-title i {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Navbar Links Styling */
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #d4e157; /* Change color on hover */
+}
+
+.cart-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Product Grid Styling */
 .product-grid {
-    display:flex;
-    flex-direction: column;
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
-}
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    /* background-color: pink; */
-    /* justify-content: space-between; */
-    padding: 20px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping to maintain horizontal layout */
+  overflow-x: auto; /* Allow horizontal scrolling if content overflows */
+  gap: 10px;
+  padding: 10px 0; /* Add vertical padding for space around the grid */
+  align-items: flex-start; /* Align items at the top of the container */
 }
 
-/* Product Card */
-.product-card {
-    flex: 0 0 calc(33.33% - 20px); /* Adjust width for 3 cards per row with 20px gap */
-    max-width: calc(26.33% - 20px); /* Adjust max-width for 3 cards per row with 20px gap */
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    position: relative;
-    
-    gap: 20px;
+/* Plant Card Styling */
+.plant-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  max-width: 300px;
+  text-align: center;
+  margin: 0 10px; /* Adjust horizontal margin to fit in the grid */
+  flex-shrink: 0; /* Prevent cards from shrinking */
+  display: flex;
+  flex-direction: column; /* Align content vertically */
+  height: 100%; /* Ensure all cards have the same height */
 }
 
-/* Pseudo-classes - Hover effect on product button */
-.product-card:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1;
+/* Plant Card Images */
+.plant-card img {
+  width: 100%;
+  height: 200px; /* Fixed height for uniformity */
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-.product-title {
-    font-weight: bold;
-    margin-bottom: 10px;
+/* Plant Card Text Styling */
+.plant-card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
-.product-price {
-    color: #e74c3c;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+.plant-card p {
+  font-size: 0.9rem;
+  color: #555;
 }
 
-.product-image {
-    max-width: 100%;
-    height: 200px; /* Adjust height for better consistency */
+.plant-card button {
+  margin-top: auto; /* Push button to the bottom */
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.product-button {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    margin-top: 10px;
+.plant-card button:hover {
+  background-color: #45a049;
 }
 
-.product-button:hover {
-    background-color: #c0392b;
-}
-
-/* Pseudo-elements - Sale badge */
-.product-card::before {
-    content: "SALE";
-    background-color: #e74c3c;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px 10px;
-    border-radius: 0 0 0 5px;
-}
-.tag_home_link{
-    display: flex;
-    /* background-color: red; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 50px;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-}
-.tag_home_link h3{
-    font-size: 30px;
-}
-.tag a{
-    text-decoration: none;
-}
-.tag {
-    width: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tag img {
-    height: 70px;
-    width: 70px;
-    border-radius: 70%;
-    
-}
-
-.luxury {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 650px;
-    font-size: 19px;
-}
-.cart{
-    color: white;
-    display: flex;
-}
-.cart_quantity_count{
-    margin-top: 16px;
-    /* background-color: red; */
-    margin-left: 27px;
-    position: absolute;
-    font-size: 29px;
-
-}
-.plantname_heading{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-    /* background-color: yellow; */
-}
-.plant_heading{
-    width: 400px;
-    text-align: center;
-    margin: 20px;
-    border: 1px solid rgb(5, 4, 4);
-    border-left: none;
-    border-right: none;
-
-    
-}
-/* Add Media Query for responsiveness */
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .product-card {
-        flex: 1 1 calc(50% - 20px); /* Adjust width for 2 cards per row with 20px gap on smaller screens */
-        max-width: calc(50% - 20px); /* Adjust max-width for 2 cards per row with 20px gap on smaller screens */
-    }
+  .product-grid {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .plant-card {
+    width: 80%; /* Adjust width to fit better in horizontal layout */
+  }
 }
-/* ProductList.css */
 
-.product-button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+@media (max-width: 480px) {
+  .plant-card {
+    width: 100%;
+    padding: 10px;
   }
-  
-  .product-button:hover {
-    background-color: #45a049;
+
+  .plant-card img {
+    max-height: 150px;
   }
-  
-  .product-button.added-to-cart {
-    background-color: grey; /* Grey when product is added */
-  }
-  @media (max-width: 1200px) {
-    .product-card {
-      flex: 1 1 calc(33.33% - 20px); /* Adjust width for 3 cards per row with 20px gap on medium screens */
-      max-width: calc(33.33% - 20px); /* Adjust max-width for 3 cards per row with 20px gap on medium screens */
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .product-card {
-      flex: 1 1 calc(50% - 20px); /* Adjust width for 2 cards per row with 20px gap on small screens */
-      max-width: calc(50% - 20px); /* Adjust max-width for 2 cards per row with 20px gap on small screens */
-    }
-    .navbar {
-        flex-direction: column; /* Change flex direction to stack items vertically */
-        align-items: center; /* Align items to the center of the container */
-      }
-    
-      .tag {
-        margin-bottom: 20px; /* Add margin bottom for spacing */
-        text-align: center; /* Align text to the center */
-      }
-    
-      .ul {
-        display: flex; /* Set display to flex */
-        flex-direction: column; /* Change flex direction to stack items vertically */
-        gap: 10px; /* Add gap between items */
-      }
-    
-      .ul div {
-        text-align: center; /* Align text to the center */
-      }
-  }
+}
